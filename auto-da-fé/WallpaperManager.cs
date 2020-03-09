@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Configuration;
 using System.Security.AccessControl;
+using auto_da_fé.Properties;
 
 namespace auto_da_fé
 {
@@ -66,7 +67,7 @@ namespace auto_da_fé
         private static string CoppyImage(string sourcePath)
         {
             
-            string destinationpath = Environment.ExpandEnvironmentVariables(ConfigurationManager.AppSettings["WallpaperCoppyPath"]);
+            string destinationpath = Environment.ExpandEnvironmentVariables(Resources.WallpaperCoppyPath);
             string newWallpaperFileName = Guid.NewGuid().ToString() + Path.GetExtension(sourcePath);
             string fullDestinationPath = destinationpath + newWallpaperFileName;
 

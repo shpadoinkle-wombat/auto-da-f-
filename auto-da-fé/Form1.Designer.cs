@@ -32,7 +32,7 @@
             this.EasyButton = new System.Windows.Forms.Button();
             this.MediumButton = new System.Windows.Forms.Button();
             this.HardButton = new System.Windows.Forms.Button();
-            this.UnseenableButton = new System.Windows.Forms.Button();
+            this.NsflButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LockWallpaper
@@ -76,22 +76,22 @@
             this.HardButton.UseVisualStyleBackColor = true;
             this.HardButton.Click += new System.EventHandler(this.HardButton_Click);
             // 
-            // UnseenableButton
+            // NsflButton
             // 
-            this.UnseenableButton.Location = new System.Drawing.Point(255, 35);
-            this.UnseenableButton.Name = "UnseenableButton";
-            this.UnseenableButton.Size = new System.Drawing.Size(75, 23);
-            this.UnseenableButton.TabIndex = 4;
-            this.UnseenableButton.Text = "Unseenable";
-            this.UnseenableButton.UseVisualStyleBackColor = true;
-            this.UnseenableButton.Click += new System.EventHandler(this.UnseenableButton_Click);
+            this.NsflButton.Location = new System.Drawing.Point(255, 35);
+            this.NsflButton.Name = "NsflButton";
+            this.NsflButton.Size = new System.Drawing.Size(75, 23);
+            this.NsflButton.TabIndex = 4;
+            this.NsflButton.Text = "NSFL";
+            this.NsflButton.UseVisualStyleBackColor = true;
+            this.NsflButton.Click += new System.EventHandler(this.NsflButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 71);
-            this.Controls.Add(this.UnseenableButton);
+            this.Controls.Add(this.NsflButton);
             this.Controls.Add(this.HardButton);
             this.Controls.Add(this.MediumButton);
             this.Controls.Add(this.EasyButton);
@@ -109,7 +109,7 @@
         private System.Windows.Forms.Button EasyButton;
         private System.Windows.Forms.Button MediumButton;
         private System.Windows.Forms.Button HardButton;
-        private System.Windows.Forms.Button UnseenableButton;
+        private System.Windows.Forms.Button NsflButton;
     }
 }
 

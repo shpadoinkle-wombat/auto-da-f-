@@ -2,6 +2,6 @@
 {
     public enum Level
     {
-        Easy, Medium, Hard, Unseenable
+        Easy, Medium, Hard, NSFL
     }
 }

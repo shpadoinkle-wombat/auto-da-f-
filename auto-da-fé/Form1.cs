@@ -31,9 +31,9 @@ namespace auto_da_fé
             WallpaperManager.SetWallpaper(Level.Hard, _lockWallpaper);
         }
 
-        private void UnseenableButton_Click(object sender, EventArgs e)
+        private void NsflButton_Click(object sender, EventArgs e)
         {
-            WallpaperManager.SetWallpaper(Level.Unseenable, _lockWallpaper);
+            WallpaperManager.SetWallpaper(Level.NSFL, _lockWallpaper);
         }
     }
 }

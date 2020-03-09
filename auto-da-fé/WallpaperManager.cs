@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Configuration;
+using System.Security.AccessControl;
 
 namespace auto_da_fé
 {
@@ -16,6 +18,8 @@ namespace auto_da_fé
                 Random rand = new Random();
                 int index = rand.Next(images.Count);
                 var selectedWallpaper = images[index];
+
+                selectedWallpaper = CoppyImage(selectedWallpaper);
 
                 if (wallpaperLock)
                 {
@@ -57,6 +61,32 @@ namespace auto_da_fé
                 imageList.AddRange(Directory.GetFiles(Directory.GetCurrentDirectory()+ @"\Wallpapers\"+ level.ToString() +@"\", @"*."+format));
             }
             return imageList;
+        }
+
+        private static string CoppyImage(string sourcePath)
+        {
+            
+            string destinationpath = Environment.ExpandEnvironmentVariables(ConfigurationManager.AppSettings["WallpaperCoppyPath"]);
+            string newWallpaperFileName = Guid.NewGuid().ToString() + Path.GetExtension(sourcePath);
+            string fullDestinationPath = destinationpath + newWallpaperFileName;
+
+            if (!Directory.Exists(destinationpath))
+            {
+                Directory.CreateDirectory(destinationpath);
+            }
+            
+            File.Copy(sourcePath, fullDestinationPath, true);
+
+            //Something to play with later
+            //FileSecurity fileSecurity = new FileSecurity();
+            //fileSecurity.SetAccessRule(new FileSystemAccessRule("Administrator", FileSystemRights.Read, AccessControlType.Allow));
+            //File.SetAccessControl(fullDestinationPath, fileSecurity);
+
+            //DirectorySecurity directoryRule = new DirectorySecurity();
+            //directoryRule.SetAccessRule(new FileSystemAccessRule("Administrator", FileSystemRights.Read, AccessControlType.Allow));
+            //Directory.SetAccessControl(destinationpath, directoryRule);
+
+            return fullDestinationPath;
         }
     }
 }
